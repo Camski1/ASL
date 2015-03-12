@@ -8,7 +8,6 @@
 			<a href=""><li>Politics</li></a>
 			<a href=""><li>Travel</li></a>
 			<a href=""><li>Sports</li></a>
-			<a href=""><li>Life</li></a>
 		</ul>
 
 		<ul>

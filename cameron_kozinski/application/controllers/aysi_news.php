@@ -57,12 +57,6 @@ class Aysi_news extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function life()
-	{
-		$this->load->view('head');
-		$this->load->view('nav');
-		$this->load->view('footer');
-	}
 
 	public function join()
 	{
