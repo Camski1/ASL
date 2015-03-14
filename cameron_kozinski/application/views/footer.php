@@ -22,19 +22,11 @@
 			<a href=""><li>Sign Up</li></a>
 		</ul>
 	</div>
+	
 </div>
 
-<?php 
-	foreach ($results as $row) {
-		$type = $row->type;
-		$story = $row->story;
-		$img = $row->img;
 
-		echo "<img src='http://localhost:8888/cameron_kozinski/img/$img'>";
-	}
-
-?>
 
 </body>
-<img src="">
+
 </html>

@@ -1,4 +1,4 @@
-<div id="nav">
+<div id="nav"> 
 
 	<a href="http://localhost:8888/cameron_kozinski"><img src="http://localhost:8888/cameron_kozinski/img/logo.svg"></a>
  
@@ -13,6 +13,7 @@
 	</ul>
 	<div id="navRight">
 		<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/join">Sign In | Sign Up</a>
+		
 
 		<form>
 			<input id="Search" type="text" name="Search" placeholder="Search..." >

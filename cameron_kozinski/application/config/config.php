@@ -1,5 +1,16 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+
+$config['facebook']['api_id'] = '1579410639009535';
+$config['facebook']['app_secret'] = 'f3add24e66d1ca2778170d224ffeb3f5';
+$config['facebook']['redirect_url'] = 'http://localhost:8888/cameron_kozinski/';
+$config['facebook']['permissions'] = array(
+  'email',
+  'user_location',
+  'user_birthday'
+);
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
