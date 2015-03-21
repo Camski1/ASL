@@ -43,7 +43,7 @@
 
 	    echo "<br/>";
 
-	    echo form_label("Stroy:", "story");
+	    echo form_label("Story:", "story");
 	    echo "<br/>";
 	    $data = array(
 	        "name" => "story",
