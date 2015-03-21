@@ -3,9 +3,10 @@
     
 
     <?php 
+    
     $this->load->helper("form");
     echo $message;
-
+    echo validation_errors();
     echo form_open("aysi_news/find_user");
 
     echo form_label("Email:", "email");
@@ -24,8 +25,8 @@
         "id" => "password",
         "value" => ""
     );
-    echo form_input($data);
-
+    echo form_password($data);
+    echo "<br/>";
     echo form_submit('mysubmit', 'Submit!');
 
     echo form_close();

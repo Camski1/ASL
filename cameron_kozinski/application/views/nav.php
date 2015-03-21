@@ -10,9 +10,12 @@
 		<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/politics"><li>Politics</li></a>
 		<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/travel"><li>Travel</li></a>
 		<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/sports"><li>Sports</li></a>
+		<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/profile"><li>Profile</li></a>
 	</ul>
 	<div id="navRight">
-		<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/join">Sign In | Sign Up</a>
+		<?php 
+			echo $result;
+		?>
 		
 
 		<form>

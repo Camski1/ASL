@@ -686,7 +686,7 @@ class CI_Session {
 			$this->cookie_path,
 			$this->cookie_domain,
 			$this->cookie_secure
-		);
+	    );
 	}
 
 	// --------------------------------------------------------------------

@@ -150,5 +150,81 @@ span{
 	padding: 0px 30px 20px 0px;
 }
 
+#profileImg{
+	width: 240px;
+	height: 270px;
+	float: left;
+	margin-left: 8%;
+	border:2px solid #122C40;
+	margin-right: 30px;
+}
+
+#profileImg img{
+	width: 100%;
+	height: 100%;
+}
+
+#stryDiv{
+	clear: both;
+	width: 85%;
+	margin-left: 8%;
+	padding-top: 30px;
+}
+
+#profilestuff{
+	float: left;
+	width: 250px;
+	height: 270px;
+	margin-bottom: 55px;
+	margin-right: 52px;
+}
+
+#profileSTR{
+	width: 250px;
+	height: 220px;
+	border:2px solid #122C40;
+	
+}
+
+#profileSTR h3{
+	margin-top: -90px;
+	font-weight: lighter;
+}
+
+#profileSTR a{
+	
+}
+
+#profileSTR img{
+	width: 100%;
+	height: 100%;
+}
+
+#about{
+	width: 92%;
+}
+
+#write-edit a{
+	color: #679fab;
+}
+
+#writeField{
+	width: 70%;
+	margin-left: 8%;
+}
+
+#edit ,#delete{
+	height: 21px;
+	width: 55px;
+	background-color: #122C40;
+	margin-right: 10px;
+	text-align: center;
+	display: inline-block;
+}
+
+
+
+
+
 
 
