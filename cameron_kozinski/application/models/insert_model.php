@@ -32,8 +32,7 @@ class insert_model extends CI_Model{
 	}
 
 	function updateStry($info){
-	
-		$this->db->where('storyID',$info->storyID);
+		$this->db->where('storyID',$info['storyID']);
         $this->db->update('Stories',$info);
 
 

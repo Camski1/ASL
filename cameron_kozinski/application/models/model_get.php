@@ -3,7 +3,7 @@
 	class Model_get extends CI_Model{
 
 		function getData($type){
-			$sql = "Select * from Stories where Stories.type = ? LIMIT 6";
+			$sql = "Select * from Stories where Stories.type = ? ORDER BY storyID desc LIMIT 6";
 			$query = $this->db->query($sql, array($type));
 			return $query->result();
 		}
@@ -39,6 +39,12 @@
 			$email = $cont['email'];
 			$sql = "Select * from Stories where Stories.email = '$email'";
 			$query = $this->db->query($sql, $email);
+			return $query->result();
+		}
+
+		function getAllStry($type){
+			$sql = "Select * from Stories where Stories.type = ? ORDER BY storyID desc";
+			$query = $this->db->query($sql, array($type));
 			return $query->result();
 		}
 	}

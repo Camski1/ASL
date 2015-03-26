@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Aysi_news extends CI_Controller {
-	public function index()
+	public function index() 
 	{
 		$this->home();
 	}
@@ -12,7 +12,7 @@ class Aysi_news extends CI_Controller {
 		if ($this->session->userdata('is_logged_in')) {
 			$this->load->model('model_get');
 			$data["results"] = $this->model_get->userProfile();
-			$story["result"] = $this->model_get->userProfileStories();
+			$story["results"] = $this->model_get->userProfileStories();
 			$login_showUser["result"] = '<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/logout">Logout</a><br/>';
 			$this->load->view('head');
 			$this->load->view('nav',$login_showUser);
@@ -52,9 +52,11 @@ if ($this->session->userdata('is_logged_in')) {
 
 		$this->load->model('model_get');
 		$data["results"] = $this->model_get->getData('US');
+		$info["result"] = $this->model_get->getAllStry('US');
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
 		$this->load->view('content', $data);
+		$this->load->view('otherStories', $info);
 		$this->load->view('footer');
 	}
 
@@ -68,9 +70,11 @@ if ($this->session->userdata('is_logged_in')) {
 
 		$this->load->model('model_get');
 		$data["results"] = $this->model_get->getData('World');
+		$info["result"] = $this->model_get->getAllStry('World');
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
 		$this->load->view('content', $data);
+		$this->load->view('otherStories', $info);
 		$this->load->view('footer');
 	}
 
@@ -84,9 +88,11 @@ if ($this->session->userdata('is_logged_in')) {
 
 		$this->load->model('model_get');
 		$data["results"] = $this->model_get->getData('Sci/Tech');
+		$info["result"] = $this->model_get->getAllStry('Sci/Tech');
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
 		$this->load->view('content', $data);
+		$this->load->view('otherStories', $info);
 		$this->load->view('footer');
 	}
 
@@ -100,9 +106,11 @@ if ($this->session->userdata('is_logged_in')) {
 
 		$this->load->model('model_get');
 		$data["results"] = $this->model_get->getData('Politics');
+		$info["result"] = $this->model_get->getAllStry('Politics');
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
 		$this->load->view('content', $data);
+		$this->load->view('otherStories', $info);
 		$this->load->view('footer');
 	}
 
@@ -116,9 +124,11 @@ if ($this->session->userdata('is_logged_in')) {
 
 		$this->load->model('model_get');
 		$data["results"] = $this->model_get->getData('Travel');
+		$info["result"] = $this->model_get->getAllStry('Travel');
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
 		$this->load->view('content', $data);
+		$this->load->view('otherStories', $info);
 		$this->load->view('footer');
 	}
 
@@ -132,9 +142,11 @@ if ($this->session->userdata('is_logged_in')) {
 
 		$this->load->model('model_get');
 		$data["results"] = $this->model_get->getData('Sports');
+		$info["result"] = $this->model_get->getAllStry('Sports');
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
 		$this->load->view('content', $data);
+		$this->load->view('otherStories', $info);
 		$this->load->view('footer');
 	}
 
@@ -151,6 +163,7 @@ if ($this->session->userdata('is_logged_in')) {
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
 		$this->load->view('join', $data);
+		$this->load->view('userStories', $data);
 		$this->load->view('footer');
 	}
 
@@ -320,9 +333,12 @@ if ($this->session->userdata('is_logged_in')) {
 		}else{
 			$login_showUser["result"] = '<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/join">Sign In | Sign Up</a>';
 		}
+		$this->load->model('model_get');
+		$data["results"] = $this->model_get->userProfile();
+
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
-		$this->load->view('editProfile');
+		$this->load->view('editProfile',$data);
 		$this->load->view('footer');
 		
 	}
@@ -380,13 +396,16 @@ if ($this->session->userdata('is_logged_in')) {
 			$login_showUser["result"] = '<a href="http://localhost:8888/cameron_kozinski/index.php/Aysi_news/join">Sign In | Sign Up</a>';
 		}
 
+		$info = $_GET['storyID'];
+		$this->load->model('model_get');
+		$data["results"] = $this->model_get->storyFind($info);
 
 		$this->load->view('head');
 		$this->load->view('nav',$login_showUser);
-		$this->load->view('updateStory');
+		$this->load->view('updateStory',$data);
 		$this->load->view('footer');
 		
-	}
+	} 
 
 	public function updateUserStoryRun(){
 

@@ -2,10 +2,27 @@
 	$this->load->helper("form");
 	echo "<div id='writeField'>";
 	echo validation_errors();
+
+	$stid = $_GET['storyID'];
+
+	foreach ($results as $rows) {
+		$title = $rows->Title;
+		$img = $rows->img;
+		$subTitle = $rows->subTitle;
+		$story = $rows->story;
+		$link = $rows->link;
+	}
 	
 	echo form_open_multipart("aysi_news/updateUserStoryRun");
 
-		form_hidden('storyID', $_GET['storyID']);
+
+		$data = array(
+	        "name" => "storyID",
+	        "id" => "storyID",
+	        "value" => "{$stid}",
+	        "type" => "hidden"
+ 	    );
+	    echo form_input($data);
 
 		echo form_label("Story Type", "type");
 	    echo "<br/>";
@@ -26,7 +43,7 @@
 	    $data = array(
 	        "name" => "Title",
 	        "id" => "Title",
-	        "value" => ""
+	        "value" => "{$title}"
 	    );
 	    echo form_input($data);
 
@@ -37,7 +54,7 @@
 	    $data = array(
 	        "name" => "subTitle",
 	        "id" => "subTitle",
-	        "value" => ""
+	        "value" => "{$subTitle}"
 	    );
 	    echo form_input($data);
 
@@ -48,7 +65,7 @@
 	    $data = array(
 	        "name" => "story",
 	        "id" => "story",
-	        "value" => "",
+	        "value" => "{$story}",
 	        'rows' => '30',
       		'cols' => '122'
 	    );
@@ -61,7 +78,7 @@
 	    $data = array(
 	        "name" => "link",
 	        "id" => "link",
-	        "value" => "",
+	        "value" => "{$link}",
 	    );
 	    echo form_input($data);
 

@@ -4,13 +4,17 @@
 	echo validation_errors();
 	echo form_open_multipart("aysi_news/updateProfile");
 
+	foreach ($results as $rows) {
+	$about = $rows->about;
+	$img = $rows->img;
+    }
 
 	echo form_label("About You:", "about");
 	    echo "<br/>";
 	    $data = array(
 	        "name" => "about",
 	        "id" => "about",
-	        "value" => "",
+	        "value" => "{$about}",
 	        'rows' => '20',
       		'cols' => '122'
 	    );
@@ -23,7 +27,7 @@
 	    $data = array(
 	        "name" => "userfile",
 	        "id" => "userfile",
-	        "value" => ""
+	        "value" => "{$img}"
 	    );
 	    echo form_upload($data);
 	    echo "<br/>";
